@@ -11,7 +11,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bradleege.batterydroid.data.CardData;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ArrayList<CardData> cardData = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(new CardRecylerViewAdapter(cardData));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
