@@ -8,11 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-
 import com.bradleege.batterydroid.data.CardData;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +21,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        CardData cd = new CardData();
+        cd.setFeature("Feature 1");
+        cd.setStatus("Status 1");
+        cardData.add(cd);
+        cd = new CardData();
+        cd.setFeature("Feature 2");
+        cd.setStatus("Status 2");
+        cardData.add(cd);
+        cd = new CardData();
+        cd.setFeature("Feature 3");
+        cd.setStatus("Status 3");
+        cardData.add(cd);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
