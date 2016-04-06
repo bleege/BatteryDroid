@@ -7,9 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v7.widget.CardView;
-
 import com.bradleege.batterydroid.data.CardData;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,19 +72,6 @@ public class CardRecylerViewAdapter extends RecyclerView.Adapter<CardRecylerView
     public void onBindViewHolder(CardDataViewHolder holder, int position) {
         holder.status.setText(cardData.get(position).getFeature());
         holder.feature.setText(cardData.get(position).getStatus());
-    }
-
-    /**
-     * Called by RecyclerView when it starts observing this Adapter.
-     * <p/>
-     * Keep in mind that same adapter may be observed by multiple RecyclerViews.
-     *
-     * @param recyclerView The RecyclerView instance which started observing this adapter.
-     * @see #onDetachedFromRecyclerView(RecyclerView)
-     */
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
     }
 
     /**
