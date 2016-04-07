@@ -1,6 +1,7 @@
 package com.bradleege.batterydroid;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +12,24 @@ import com.bradleege.batterydroid.data.CardData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardRecylerViewAdapter extends RecyclerView.Adapter<CardRecylerViewAdapter.CardDataViewHolder> {
+public class CardRecyclerViewAdapter extends RecyclerView.Adapter<CardRecyclerViewAdapter.CardDataViewHolder> {
+
+    private static final String TAG = "CardRecyclerViewAdapter";
 
     private List<CardData> cardData = new ArrayList<>();
 
-    public CardRecylerViewAdapter(List<CardData> cardData) {
+    public CardRecyclerViewAdapter(List<CardData> cardData) {
         super();
         this.cardData.clear();
         this.cardData.addAll(cardData);
+    }
+
+    public void updateData(List<CardData> newData) {
+        Log.i(TAG, "updateData() called");
+        cardData.clear();
+        cardData.addAll(newData);
+        notifyDataSetChanged();
+        Log.i(TAG, "updateData() finished");
     }
 
     /**
@@ -70,8 +81,8 @@ public class CardRecylerViewAdapter extends RecyclerView.Adapter<CardRecylerView
      */
     @Override
     public void onBindViewHolder(CardDataViewHolder holder, int position) {
-        holder.status.setText(cardData.get(position).getFeature());
-        holder.feature.setText(cardData.get(position).getStatus());
+        holder.feature.setText(cardData.get(position).getFeature());
+        holder.status.setText(cardData.get(position).getStatus());
     }
 
     /**
