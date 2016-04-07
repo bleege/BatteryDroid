@@ -25,11 +25,11 @@ public class CardRecyclerViewAdapter extends RecyclerView.Adapter<CardRecyclerVi
     }
 
     public void updateData(List<CardData> newData) {
-        Log.i(TAG, "updateData() called");
+        Log.d(TAG, "updateData() called");
         cardData.clear();
         cardData.addAll(newData);
         notifyDataSetChanged();
-        Log.i(TAG, "updateData() finished");
+        Log.d(TAG, "updateData() finished");
     }
 
     /**

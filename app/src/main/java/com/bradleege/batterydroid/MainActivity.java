@@ -1,3 +1,7 @@
+/**
+ * Battery processing info based on:
+ * http://www.ssaurel.com/blog/how-to-get-battery-information-programmatically-in-android/
+ */
 package com.bradleege.batterydroid;
 
 import android.content.BroadcastReceiver;
@@ -24,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    private RecyclerView recyclerView = null;
     private CardRecyclerViewAdapter cardRecyclerViewAdapter = null;
-
     private BroadcastReceiver batteryInfoReceiver;
 
     @Override
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         cardRecyclerViewAdapter = new CardRecyclerViewAdapter(new ArrayList<CardData>());
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         batteryInfoReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Log.i(TAG, "onReceive() called with intent " + intent);
+                Log.d(TAG, "onReceive() called with intent " + intent);
                 updateBatteryStatus(intent);
             }
         };
