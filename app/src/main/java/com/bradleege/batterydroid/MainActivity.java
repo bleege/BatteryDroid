@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         cd.setStatus("Status 5");
         cardData.add(cd);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new CardRecylerViewAdapter(cardData));
