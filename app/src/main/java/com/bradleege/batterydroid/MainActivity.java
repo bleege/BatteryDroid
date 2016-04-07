@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-/*
         CardData cd = new CardData();
         cd.setFeature("Feature 1");
         cd.setStatus("Status 1");
@@ -35,12 +34,19 @@ public class MainActivity extends AppCompatActivity {
         cd.setFeature("Feature 3");
         cd.setStatus("Status 3");
         cardData.add(cd);
+        cd = new CardData();
+        cd.setFeature("Feature 4");
+        cd.setStatus("Status 4");
+        cardData.add(cd);
+        cd = new CardData();
+        cd.setFeature("Feature 5");
+        cd.setStatus("Status 5");
+        cardData.add(cd);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new CardRecylerViewAdapter(cardData));
-*/
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
